@@ -1,7 +1,9 @@
 import React, { useState, useCallback } from 'react';
-import { TextInput } from '../components/UIkit';
+import { TextInput, PrimaryButton } from '../components/UIkit';
 
 const SignUp = () => {
+
+  
   
   const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
@@ -50,23 +52,27 @@ const SignUp = () => {
       <TextInput
         label={'email'}
         required={true}
-        value={userName}
+        value={email}
         type={"email"}
         onChange={inputEmail}/>
 
       <TextInput
         label={'password'}
         required={true}
-        value={userName}
+        value={password}
         type={"password"}
         onChange={inputPassword}/>
 
       <TextInput
         label={'confirm'}
         required={true}
-        value={userName}
+        value={confirmPassword}
         type={"password"}
         onChange={inputConfirmPassword}/>
+
+      <PrimaryButton
+        label={'Sign Up'}
+        onClick={() => console.log('clicked')}/>
 
     </div>
   )

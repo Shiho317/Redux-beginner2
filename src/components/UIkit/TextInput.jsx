@@ -2,7 +2,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
-export const TextInput = (props) => {
+const TextInput = (props) => {
   return (
     <div>
       <Box
@@ -23,4 +23,6 @@ export const TextInput = (props) => {
       </Box>
     </div>
   )
-}
+};
+
+export default TextInput;
