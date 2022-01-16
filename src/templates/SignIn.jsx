@@ -3,21 +3,12 @@ import { TextInput, PrimaryButton } from '../components/UIkit';
 import { signUp } from '../reducks/users/operation';
 import { useDispatch } from 'react-redux';
 
-const SignUp = () => {
+const SignIn = () => {
 
   const dispatch = useDispatch();
   
-  const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-
-  const inputUserName = useCallback(
-    (e) => {
-      setUserName(e.target.value)
-    },
-    [setUserName],
-  );
 
   const inputEmail = useCallback(
     (e) => {
@@ -33,23 +24,9 @@ const SignUp = () => {
     [setPassword],
   );
 
-  const inputConfirmPassword = useCallback(
-    (e) => {
-      setConfirmPassword(e.target.value)
-    },
-    [setConfirmPassword],
-  );
-
   return (
     <div>
-      <h2>Create Account</h2>
-
-      <TextInput
-        label={'name'}
-        required={true}
-        value={userName}
-        type={"text"}
-        onChange={inputUserName}/>
+      <h2>Sign In</h2>
 
       <TextInput
         label={'email'}
@@ -65,19 +42,12 @@ const SignUp = () => {
         type={"password"}
         onChange={inputPassword}/>
 
-      <TextInput
-        label={'confirm'}
-        required={true}
-        value={confirmPassword}
-        type={"password"}
-        onChange={inputConfirmPassword}/>
-
       <PrimaryButton
-        label={'Sign Up'}
-        onClick={() => {dispatch(signUp(userName, email, password, confirmPassword))}}/>
+        label={'Sign In'}
+        onClick={() => {dispatch(signUp(email, password))}}/>
 
     </div>
   )
 }
 
-export default SignUp
+export default SignIn

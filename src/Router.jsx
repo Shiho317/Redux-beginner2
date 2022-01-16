@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './templates/Home';
-import SignUp from './templates/SignUp';
+import { Home, Login, SignIn, SignUp } from './templates';
 
 const Router = () => {
   return (
@@ -9,7 +8,9 @@ const Router = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home/>}/>
-          <Route path="/login" element={<SignUp/>}/>
+          <Route path="/signup" element={<SignUp/>}/>
+          <Route path="/signin" element={<SignIn/>}/>
+          <Route path="/login" element={<Login/>}/>
         </Routes>
       </BrowserRouter>
     </div>
